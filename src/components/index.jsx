@@ -1,8 +1,11 @@
 import { Grid } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect } from 'react';
 import SearchComponent from './search/searchComponent';
 import CarouselComponent from './carousel';
 const IndexPage = ()=>{
+    useEffect(()=>{
+        document.title='Rick y Morty | Fan pague';
+    },[])
     return(
         <Grid>
             <SearchComponent/>
