@@ -1,21 +1,22 @@
+//Intial state with container categories (Characters, Episodes, Location)
 let INITIAL_STATE = {
     title: null,
     pages: null,
     data: null
 }
-
+//Initial state with detail schema
 let INITIAL_STATE_DETAIL = {
     schema:null,
     data:null
 }
-
+//Intial state with search
 let INITIAL_STATE_SEARCH = {
     status:null,
     data:null,
     pages:null,
     inType:null
 }
-
+//Reducer with container categories
 export const pageStore = (state = INITIAL_STATE, action)=>{
     switch(action.type){
         case 'SET_STATE':
@@ -26,7 +27,7 @@ export const pageStore = (state = INITIAL_STATE, action)=>{
             return state;
     }
 }
-
+//Reducer with detail schema categories
 export const detailStore = (state = INITIAL_STATE_DETAIL,action)=>{
     switch (action.type) {
         case 'SET_DATA_DETAIL':
@@ -39,7 +40,7 @@ export const detailStore = (state = INITIAL_STATE_DETAIL,action)=>{
             return state;
     }
 }
-
+//Reducer with search page and component
 export const searchStore = (state = INITIAL_STATE_SEARCH,action)=>{
     switch (action.type) {
         case 'SET_SEARCH':
