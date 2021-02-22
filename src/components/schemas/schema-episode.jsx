@@ -34,6 +34,7 @@ const SchemaEpisode = (props) =>{
     const [episode,setEpisode] = useState("");
     const [season,setSeason] = useState("");
     useEffect(()=>{
+        document.title = 'Rick y Morty | Episode - '+props.data.name;
         if(getDetail.schema === 'episode'){
             const epdata = props.data.episode.split('S').join("").split('E');
             setSeason(epdata[0]);

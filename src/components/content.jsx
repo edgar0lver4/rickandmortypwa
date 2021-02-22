@@ -31,6 +31,7 @@ const Content = (props) =>{
 
     //Obtain an information from APi, and save in store
     useEffect(async ()=>{
+        document.title = 'Rick y Morty | '+props.title;//Change the title
         try{
             const response = await axios.get(props.url);
             dispatch(setState(props.title,response.data.info.pages,response.data.results));
@@ -55,6 +56,7 @@ const Content = (props) =>{
             <Typography align='left' variant='h2'>
                 {props.title}
             </Typography>
+            {infoPage.pages !== null ? <Pagination count={infoPage.pages} page={page} onChange={handlePagination} /> : null}
             <Grid className={classes.subContainer}>
                 <Grid className={classes.content} container spacing={3}>
                     {infoPage.data !== null ?

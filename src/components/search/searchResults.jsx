@@ -71,6 +71,7 @@ const SearchResults = ()=>{
             let results = await axios.get(url);
             console.log(results);
             dispatch(setSearch(200,results.data.results,results.data.info.pages,inType));
+            document.title='Rick y Morty | Search - '+textToSearch;
         }catch(error){
             console.log(error);
             dispatch(setSearch(404,null,null,null));

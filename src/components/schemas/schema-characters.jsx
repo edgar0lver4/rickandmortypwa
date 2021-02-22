@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Grid} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
@@ -51,6 +51,10 @@ const SchemaCharacter = (props)=>{
         return val.split('/')[val.split('/').length-1];
     }
     const getDetail = useSelector((store) => store.detailStore);
+
+    useEffect(()=>{
+        document.title='Rick y Morty | Character - '+props.data.name;
+    },[props.data.name])
 
     return(
         <Grid className={classes.header}>

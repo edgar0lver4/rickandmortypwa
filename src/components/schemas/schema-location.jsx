@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Grid} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
@@ -31,6 +31,9 @@ const locationStyle = makeStyles({
 const SchemaLocation = (props) =>{
     const classes = locationStyle();
     const getDetail = useSelector((store)=>store.detailStore);
+    useEffect(()=>{
+        document.title='Rick y Morty | Location - '+props.data.name;
+    },[props])
     return(
         <Grid className={classes.body}>
         {   getDetail.schema === 'location' ?
